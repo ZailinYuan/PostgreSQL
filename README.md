@@ -2,11 +2,11 @@
 Tips
 
 # Links:
-1. tutorial:
+1. Pg-promise tutorial:
 
     http://vitaly-t.github.io/pg-promise/index.html
 
-2. Git Docs
+2. Pg-promise docs
 
     https://github.com/vitaly-t/pg-promise
 
