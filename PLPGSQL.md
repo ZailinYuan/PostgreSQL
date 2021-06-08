@@ -17,3 +17,12 @@ https://pg.sjk66.com/stored-procedure/loop.html
       raise notice 'counter: %', counter;
        end loop;
     end; $$
+
+3.
+    
+    do $$
+    begin 
+      for counter in 1..6 by 2 loop
+        raise notice 'counter: %', counter;
+      end loop;
+    end; $$
