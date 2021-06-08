@@ -19,7 +19,7 @@ https://pg.sjk66.com/stored-procedure/loop.html
     end; $$
 
 3.
-    
+
     do $$
     begin 
       for counter in 1..6 by 2 loop
