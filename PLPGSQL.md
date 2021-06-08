@@ -26,3 +26,20 @@ https://pg.sjk66.com/stored-procedure/loop.html
         raise notice 'counter: %', counter;
       end loop;
     end; $$
+
+4.
+
+    do
+    $$
+    declare
+        f record;
+    begin
+        for f in select title, length 
+               from film 
+               order by length desc, title
+               limit 10 
+        loop 
+        raise notice '%(% mins)', f.title, f.length;
+        end loop;
+    end;
+    $$
