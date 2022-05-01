@@ -26,3 +26,12 @@
 ```
 
 # Window function
+window functions returns result within group partitioned by PARTITION clause. 
+
+* rank() function returns in-partition rank of each partition. The following SQL is finding grade rank within each class.
+```sql
+    SELECT *,
+       rank() OVER (PARTITION BY class
+                     ORDER BY grade DESC) AS ranking
+    FROM classes
+```
