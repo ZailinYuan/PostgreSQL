@@ -22,7 +22,7 @@ Run:
     count(*), 
     count(*) FILTER (WHERE grade > 80) AS good, 
     avg(grade) FILTER (WHERE grade > 80) AS average, 
-    string_agg("name", ', ') 
+    string_agg("name", ', ' ORDER BY "name")
   FROM zzz_tmp.classes c 
   GROUP BY "class" 
 ```
