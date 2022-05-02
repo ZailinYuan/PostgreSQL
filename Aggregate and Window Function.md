@@ -34,3 +34,10 @@ Then:
 |Math        |3    |2   |85.5   |Frank, Lily, Eva    |
 |Team_Builder|4    |2   |87.5   |AJ, Bill, Toma, Rick|
 ```
+
+
+2. WITHIN GROUP
+* The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
+```
+
+```
