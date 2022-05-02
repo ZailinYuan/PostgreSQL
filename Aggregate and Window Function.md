@@ -40,12 +40,12 @@ Then:
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
 * Usually used with order by
 * https://www.2ndquadrant.com/en/blog/the-within-group-and-filter-sql-clauses-of-postgresql-9-4/#:~:text=By%20using%20the%20WITHIN%20GROUP,certain%20conditions%2C%20thereby%20avoiding%20aggregations.
-```
+```sql
 select 
      sell_date,
      count(1) as num_sold,
      string_agg(product,',') within group (order by product) as products
-from t
+from transactions
 group by sell_date
 order by sell_date
 ```
