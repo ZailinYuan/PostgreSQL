@@ -20,16 +20,17 @@ Run:
   SELECT 
     "class", 
     count(*), 
-    count(*) Filter (WHERE grade > 80), 
+    count(*) FILTER (WHERE grade > 80) AS good, 
+    avg(grade) FILTER (WHERE grade > 80) AS average, 
     string_agg("name", ', ') 
   FROM zzz_tmp.classes c 
   GROUP BY "class" 
 ```
 Then:
 ```
-|class        |count|count|string_agg          |
-|-------------|-----|-----|--------------------|
-|Inspect      |1    |0    |Bob                 |
-|Math         |3    |2    |Frank, Lily, Eva    |
-|Team_Builder |4    |2    |AJ, Bill, Toma, Rick|
+|class       |count|good|average|string_agg          |
+|------------|-----|----|-------|--------------------|
+|Inspect     |1    |0   |       |Bob                 |
+|Math        |3    |2   |85.5   |Frank, Lily, Eva    |
+|Team_Builder|4    |2   |87.5   |AJ, Bill, Toma, Rick|
 ```
