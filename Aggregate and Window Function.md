@@ -19,8 +19,8 @@ Run:
   SELECT 
     "class", 
     count(*), 
-    count(*) 
-    Filter (WHERE grade > 80), string_agg("name", ', ') 
+    count(*) Filter (WHERE grade > 80), 
+    string_agg("name", ', ') 
   FROM zzz_tmp.classes c 
   GROUP BY "class" 
 ```
