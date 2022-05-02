@@ -31,8 +31,8 @@ Then:
 |class       |count|good|average|string_agg          |
 |------------|-----|----|-------|--------------------|
 |Inspect     |1    |0   |[NULL] |Bob                 |
-|Math        |3    |2   |85.5   |Frank, Lily, Eva    |
-|Team_Builder|4    |2   |87.5   |AJ, Bill, Toma, Rick|
+|Math        |3    |2   |85.5   |Eva, Frank, Lily    |
+|Team_Builder|4    |2   |87.5   |AJ, Bill, Rick, Toma|
 ```
 
 
