@@ -1,6 +1,6 @@
 
 # Aggregate Function Advanced
-1. Filter clause
+1. <b>Filter clause</b>
 * See example here.
 ```
 |id |name |class       |grade|
