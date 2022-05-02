@@ -14,7 +14,7 @@
 |8  |Rick |Team_Builder|89   |
 
 ```
-Achieved by:
+Run:
 ```sql
   SELECT 
     "class", 
@@ -23,4 +23,12 @@ Achieved by:
     Filter (WHERE grade > 80), string_agg("name", ', ') 
   FROM zzz_tmp.classes c 
   GROUP BY "class" 
+```
+Then:
+```
+|class        |count|count|string_agg          |
+|-------------|-----|-----|--------------------|
+|Inspect      |1    |0    |Bob                 |
+|Math         |3    |2    |Frank, Lily, Eva    |
+|Team_Builder |4    |2    |AJ, Bill, Toma, Rick|
 ```
