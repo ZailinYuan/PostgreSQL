@@ -25,6 +25,13 @@
     SELECT DISTINCT ON (name) name, age FROM ui.prisoners ORDER BY name, age  
 ```
 
+# CROSS JOIN 
+* If a table A has 8 rows, then A cross join A will leads to 64 rows.
+```
+SELECT * FROM zzz_tmp.classes c CROSS JOIN zzz_tmp.classes c2;
+SELECT * FROM zzz_tmp.classes c3, zzz_tmp.classes c4;
+```
+
 # Window function
 window functions returns result within group partitioned by PARTITION clause. 
 
