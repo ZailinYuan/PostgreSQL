@@ -27,7 +27,7 @@
 
 # CROSS JOIN 
 * If a table A has 8 rows, then A cross join A will leads to 64 rows.
-```
+```sql
 SELECT * FROM zzz_tmp.classes c CROSS JOIN zzz_tmp.classes c2;
 SELECT * FROM zzz_tmp.classes c3, zzz_tmp.classes c4;
 ```
