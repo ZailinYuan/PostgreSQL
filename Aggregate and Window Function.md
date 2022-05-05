@@ -13,7 +13,7 @@ Aggregate Function are not necessarily works with <b>GROUP BY</b> clause. It sti
 ```
 
 # Aggregate Function Advanced
-#### 1. <b>Filter clause</b>
+### 1. <b>Filter clause</b>
 * See example here.
 ```
 |id |name |class       |grade|
@@ -48,7 +48,7 @@ Then:
 |Team_Builder|4    |2   |87.5   |AJ, Bill, Rick, Toma|
 ```
 
-#### 2. <b>GROUPING SETS, CUBE, and ROLLUP</b>
+### 2. <b>GROUPING SETS, CUBE, and ROLLUP</b>
 * To deal with more complex grouping oerations.<br>
 See example here:
 ```
