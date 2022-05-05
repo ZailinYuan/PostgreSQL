@@ -31,8 +31,8 @@
 SELECT * FROM zzz_tmp.classes c CROSS JOIN zzz_tmp.classes c2;
 SELECT * FROM zzz_tmp.classes c3, zzz_tmp.classes c4;
 ```
-* For all join cases, see offical document:
-\nhttps://www.postgresql.org/docs/10/queries-table-expressions.html#QUERIES-GROUP
+* For all join cases, see offical document:<br />
+https://www.postgresql.org/docs/10/queries-table-expressions.html#QUERIES-GROUP
 
 # Window function
 window functions returns result within group partitioned by PARTITION clause. 
