@@ -49,6 +49,18 @@ https://www.postgresql.org/docs/10/queries-table-expressions.html#QUERIES-GROUP
 |8  |Rick |Team_Builder|89   |
 
 ```
+If we do query like below:
+```sql
+SELECT DISTINCT c."class", avgg.avg_grade FROM zzz_tmp.classes c, 
+    (SELECT avg(grade) AS avg_grade FROM zzz_tmp.classes c2 WHERE c."class" = c2."class" GROUP BY "class") AS avgg
+```
+An error raised saying 'There is an entry for table "c", but it cannot be referenced from this part of the query.'<br>
+If we added <b>lateral</b> here:
+```
+SELECT DISTINCT c."class", avgg.avg_grade FROM zzz_tmp.classes c, 
+    LATERAL (SELECT avg(grade) AS avg_grade FROM zzz_tmp.classes c2 WHERE c."class" = c2."class" GROUP BY "class") AS avgg
+```
+It works. subquery can refer 'c' of outer query.
 
 # Window function
 window functions returns result within group partitioned by PARTITION clause. 
