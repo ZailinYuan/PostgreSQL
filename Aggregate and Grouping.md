@@ -150,7 +150,7 @@ Hence, <b>ROLLUP</b> list groups like stairs and there grouping results. This is
 <br/>CUBE lists all possible groups. Refer to office document it is clear enough there.<br/>
 https://www.postgresql.org/docs/10/queries-table-expressions.html#QUERIES-GROUP
 
-### 12. WITHIN GROUP
+### 3. WITHIN GROUP
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
 * Usually used with order by
 * https://www.postgresql.org/docs/current/functions-aggregate.html
