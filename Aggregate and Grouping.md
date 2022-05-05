@@ -14,7 +14,7 @@ Aggregate Function are <b>NOT</b> necessarily works with <b>GROUP BY</b> clause.
 
 # Aggregate Function Advanced
 ### 1. <b>Filter clause</b>
-* See example here.
+* See example here. It filters undesired value in each group before calculate aggregate function on that group.
 ```
 |id |name |class       |grade|
 |---|-----|------------|-----|
