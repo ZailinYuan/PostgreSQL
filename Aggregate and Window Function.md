@@ -65,10 +65,24 @@ See example here:
 ```
 Now we wanna know max, min and avg grade group by class and team and total.
 ```sql
-      		SELECT "class", team, max(grade), min(grade), avg(grade) 
-      		FROM zzz_tmp.classes c 
-      		GROUP BY GROUPING SETS (("class"), (team), ())
+    SELECT "class", team, max(grade), min(grade), avg(grade) 
+    FROM zzz_tmp.classes c 
+    GROUP BY GROUPING SETS (("class"), (team), ())
 ```
+Result:
+```
+|class        |team   |max|min|avg   |
+|-------------|-------|---|---|------|
+|[NULL]       |[NULL] |90 |74 |81.75 |
+|Inspect      |[NULL] |78 |78 |78.00 |
+|Math         |[NULL] |90 |77 |82.66 |
+|Team_Builder |[NULL] |89 |74 |82.00 |
+|[NULL]       |OTHER  |89 |89 |89.00 |
+|[NULL]       |DEV    |90 |78 |82.80 |
+|[NULL]       |BA     |77 |74 |75.50 |
+```
+See the first line is total.
+
 
 12. WITHIN GROUP
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
