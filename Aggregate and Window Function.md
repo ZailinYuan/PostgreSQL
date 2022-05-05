@@ -73,13 +73,13 @@ Result:
 ```
 |class        |team   |max|min|avg   |
 |-------------|-------|---|---|------|
-|[NULL]       |[NULL] |90 |74 |81.75 |
-|Inspect      |[NULL] |78 |78 |78.00 |
-|Math         |[NULL] |90 |77 |82.66 |
-|Team_Builder |[NULL] |89 |74 |82.00 |
-|[NULL]       |OTHER  |89 |89 |89.00 |
-|[NULL]       |DEV    |90 |78 |82.80 |
-|[NULL]       |BA     |77 |74 |75.50 |
+|             |       |90 |74 |81.75 |
+|Inspect      |       |78 |78 |78.00 |
+|Math         |       |90 |77 |82.66 |
+|Team_Builder |       |89 |74 |82.00 |
+|             |OTHER  |89 |89 |89.00 |
+|             |DEV    |90 |78 |82.80 |
+|             |BA     |77 |74 |75.50 |
 ```
 Remind that "class" and "team" must be declared in GROUPING SETS, otherwise it's not a valid query. <br/>
 Executor does two rounds of hash to aggregate these two groups.<br/>
@@ -94,11 +94,11 @@ Result:
 ```
 |class        |team   |max|min|avg   |
 |-------------|-------|---|---|------|
-|[NULL]       |[NULL] |90 |74 |81.75 |
-|Math         |[NULL] |90 |77 |82.66 |
-|Team_Builder |[NULL] |89 |74 |82.00 |
-|[NULL]       |OTHER  |89 |89 |89.00 |
-|[NULL]       |DEV    |90 |78 |82.80 |
+|             |       |90 |74 |81.75 |
+|Math         |       |90 |77 |82.66 |
+|Team_Builder |       |89 |74 |82.00 |
+|             |OTHER  |89 |89 |89.00 |
+|             |DEV    |90 |78 |82.80 |
 ```
 * Works with <b>Filter</b> clause.
 ```sql
