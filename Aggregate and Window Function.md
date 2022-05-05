@@ -109,6 +109,18 @@ Result:
     FROM zzz_tmp.classes c 
     GROUP BY GROUPING SETS (("class"), (team), ())
 ```
+Result
+```
+|class       |team  |max|min|avg  |
+|------------|------|---|---|-----|
+|            |      |90 |81 |86.50|
+|Inspect     |      |   |   |     |
+|Math        |      |90 |81 |85.50|
+|Team_Builder|      |89 |86 |87.50|
+|            |OTHER |89 |89 |89.00|
+|            |DEV   |90 |81 |85.66|
+|            |BA    |   |   |     |
+```
 
 ### 12. WITHIN GROUP
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
