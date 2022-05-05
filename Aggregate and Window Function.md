@@ -121,6 +121,12 @@ Result
 |            |DEV   |90 |81 |85.66|
 |            |BA    |   |   |     |
 ```
+* <b>ROLLUP</b> clause
+```
+    SELECT "class", team, max(grade), min(grade), avg(grade)
+    FROM zzz_tmp.classes c 
+    GROUP BY ROLLUP ("class", team)
+```
 
 ### 12. WITHIN GROUP
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
