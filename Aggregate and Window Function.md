@@ -82,7 +82,24 @@ Result:
 |[NULL]       |BA     |77 |74 |75.50 |
 ```
 Remind that "class" and "team" must be declared in GROUPING SETS, otherwise it's not a valid query. <br/>
-Executor does two rounds of hash to aggregate these two groups.
+Executor does two rounds of hash to aggregate these two groups.<br/>
+Having clause still works.
+```sql
+    SELECT "class", team, max(grade), min(grade), avg(grade) 
+    FROM zzz_tmp.classes c 
+    GROUP BY GROUPING SETS (("class"), (team), ())
+    HAVING avg(grade) > 80
+```
+Result:
+```
+|class        |team   |max|min|avg   |
+|-------------|-------|---|---|------|
+|[NULL]       |[NULL] |90 |74 |81.75 |
+|Math         |[NULL] |90 |77 |82.66 |
+|Team_Builder |[NULL] |89 |74 |82.00 |
+|[NULL]       |OTHER  |89 |89 |89.00 |
+|[NULL]       |DEV    |90 |78 |82.80 |
+```
 
 
 12. WITHIN GROUP
