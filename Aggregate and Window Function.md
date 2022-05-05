@@ -142,6 +142,7 @@ Result
 |Math        |     |90 |77 |82.66|
 |Team_Builder|     |89 |74 |82.00|
 ```
+Hence, <b>ROLLUP<b/> list all possible groups and there grouping results.
 
 ### 12. WITHIN GROUP
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
