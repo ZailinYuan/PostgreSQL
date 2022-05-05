@@ -63,7 +63,7 @@ See example here:
 |7  |Eva  |Math         |77   |BA   |
 |8  |Rick |Team_Builder |89   |OTHER|
 ```
-Now we wanna know max, min and avg grade group by class and team and total.
+Now we wanna know max, min and avg grade grouping by class and team and total.
 ```sql
     SELECT "class", team, max(grade), min(grade), avg(grade) 
     FROM zzz_tmp.classes c 
