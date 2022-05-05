@@ -122,10 +122,10 @@ Result
 |            |BA    |   |   |     |
 ```
 * <b>ROLLUP</b> clause
-```
-    SELECT "class", team, max(grade), min(grade), avg(grade)
-    FROM zzz_tmp.classes c 
-    GROUP BY ROLLUP ("class", team)
+```sql
+  SELECT "class", team, max(grade), min(grade), avg(grade)
+  FROM zzz_tmp.classes c 
+  GROUP BY ROLLUP ("class", team)
 ```
 
 ### 12. WITHIN GROUP
