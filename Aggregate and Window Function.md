@@ -82,7 +82,7 @@ Result:
 |[NULL]       |BA     |77 |74 |75.50 |
 ```
 Remind that "class" and "team" must be declared in GROUPING SETS, otherwise it's not a valid query. <br/>
-Executor does two round of hash to aggregate these two groups.
+Executor does two rounds of hash to aggregate these two groups.
 
 
 12. WITHIN GROUP
