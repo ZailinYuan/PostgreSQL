@@ -103,9 +103,9 @@ Result:
 * Works with <b>Filter</b> clause.
 ```sql
     SELECT "class", team, 
-    max(grade) FILTER (WHERE grade > 80) AS "max", 
-    min(grade) FILTER (WHERE grade > 80) AS "min", 
-    avg(grade) FILTER (WHERE grade > 80) AS "avg"
+      max(grade) FILTER (WHERE grade > 80) AS "max", 
+      min(grade) FILTER (WHERE grade > 80) AS "min", 
+      avg(grade) FILTER (WHERE grade > 80) AS "avg"
     FROM zzz_tmp.classes c 
     GROUP BY GROUPING SETS (("class"), (team), ())
 ```
