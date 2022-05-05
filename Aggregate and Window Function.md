@@ -83,7 +83,7 @@ Result:
 ```
 Remind that "class" and "team" must be declared in GROUPING SETS, otherwise it's not a valid query. <br/>
 Executor does two rounds of hash to aggregate these two groups.<br/>
-Having clause still works.
+* Having clause still works.
 ```sql
     SELECT "class", team, max(grade), min(grade), avg(grade) 
     FROM zzz_tmp.classes c 
