@@ -81,7 +81,8 @@ Result:
 |[NULL]       |DEV    |90 |78 |82.80 |
 |[NULL]       |BA     |77 |74 |75.50 |
 ```
-See the first line is total.
+Remind that "class" and "team" must be declared in GROUPING SETS, otherwise it's not a valid query. <br/>
+Executor does two round of hash to aggregate these two groups.
 
 
 12. WITHIN GROUP
