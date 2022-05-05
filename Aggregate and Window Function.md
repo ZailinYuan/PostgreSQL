@@ -1,6 +1,6 @@
 # Aggregate (group) Function Tips
 ### Tip 1
-Aggregate Function are not necessarily works with <b>GROUP BY</b> clause. It still works when no GRUOP BY and the whole table will be seen as a group. A well-known example is COUNT().
+Aggregate Function are <b>NOT</b> necessarily works with <b>GROUP BY</b> clause. It still works when no GRUOP BY and the whole table will be seen as a group. A well-known example is COUNT().
 ```sql
   SELECT max(grade) AS avg_grade 
   FROM zzz_tmp.classes c2 
