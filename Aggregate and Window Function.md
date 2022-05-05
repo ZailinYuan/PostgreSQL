@@ -47,8 +47,29 @@ Then:
 |Team_Builder|4    |2   |87.5   |AJ, Bill, Rick, Toma|
 ```
 
+2. <b>GROUPING SETS, CUBE, and ROLLUP</b>
+* To deal with more complex grouping oerations.<br>
+See example here:
+```
+|id |name |class        |grade|team |
+|---|-----|-------------|-----|-----|
+|1  |AJ   |Team_Builder |74   |BA   |
+|2  |Bill |Team_Builder |79   |DEV  |
+|3  |Toma |Team_Builder |86   |DEV  |
+|4  |Frank|Math         |81   |DEV  |
+|5  |Lily |Math         |90   |DEV  |
+|6  |Bob  |Inspect      |78   |DEV  |
+|7  |Eva  |Math         |77   |BA   |
+|8  |Rick |Team_Builder |89   |OTHER|
+```
+Now we wanna know max, min and avg grade group by class and team and total.
+```sql
+      		SELECT "class", team, max(grade), min(grade), avg(grade) 
+      		FROM zzz_tmp.classes c 
+      		GROUP BY GROUPING SETS (("class"), (team), ())
+```
 
-2. WITHIN GROUP
+12. WITHIN GROUP
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
 * Usually used with order by
 * https://www.postgresql.org/docs/current/functions-aggregate.html
