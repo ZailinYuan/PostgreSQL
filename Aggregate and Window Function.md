@@ -50,6 +50,8 @@ Then:
 
 ### 2. <b>GROUPING SETS, CUBE, and ROLLUP</b>
 * To deal with more complex grouping oerations.<br>
+
+* <b>GROUPING SETS</b>
 See example here:
 ```
 |id |name |class        |grade|team |
@@ -121,7 +123,7 @@ Result
 |            |DEV   |90 |81 |85.66|
 |            |BA    |   |   |     |
 ```
-* <b>ROLLUP</b> clause
+* <b>ROLLUP</b>
 ```sql
   SELECT "class", team, max(grade), min(grade), avg(grade)
   FROM zzz_tmp.classes c 
@@ -142,7 +144,11 @@ Result
 |Math        |     |90 |77 |82.66|
 |Team_Builder|     |89 |74 |82.00|
 ```
-Hence, <b>ROLLUP</b> list all possible groups and there grouping results. This is commonly used for analysis over hierarchical data; e.g., total salary by department, division, and company-wide total.
+Hence, <b>ROLLUP</b> list groups like stairs and there grouping results. This is commonly used for analysis over hierarchical data; e.g., total salary by department, division, and company-wide total.
+
+* <b>CUBE<b/>
+  CUBE lists all possible groups. Refer to office document it is clear enough there.<br/>
+  https://www.postgresql.org/docs/10/queries-table-expressions.html#QUERIES-GROUP
 
 ### 12. WITHIN GROUP
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
