@@ -100,7 +100,15 @@ Result:
 |[NULL]       |OTHER  |89 |89 |89.00 |
 |[NULL]       |DEV    |90 |78 |82.80 |
 ```
-
+* Works with <b>Filter</b> clause.
+```sql
+    SELECT "class", team, 
+    max(grade) FILTER (WHERE grade > 80) AS "max", 
+    min(grade) FILTER (WHERE grade > 80) AS "min", 
+    avg(grade) FILTER (WHERE grade > 80) AS "avg"
+    FROM zzz_tmp.classes c 
+    GROUP BY GROUPING SETS (("class"), (team), ())
+```
 
 ### 12. WITHIN GROUP
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
