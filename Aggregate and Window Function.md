@@ -147,7 +147,7 @@ Result
 Hence, <b>ROLLUP</b> list groups like stairs and there grouping results. This is commonly used for analysis over hierarchical data; e.g., total salary by department, division, and company-wide total.
 
 * <b>CUBE<b/>
-CUBE lists all possible groups. Refer to office document it is clear enough there.<br/>
+<br/>CUBE lists all possible groups. Refer to office document it is clear enough there.<br/>
 https://www.postgresql.org/docs/10/queries-table-expressions.html#QUERIES-GROUP
 
 ### 12. WITHIN GROUP
