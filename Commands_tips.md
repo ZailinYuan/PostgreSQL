@@ -59,9 +59,9 @@ SELECT DISTINCT c."class", avgg.avg_grade FROM zzz_tmp.classes c,
         GROUP BY "class"
     ) AS avgg
 ```
-An error raised saying 'There is an entry for table "c", but it cannot be referenced from this part of the query.'<br>
+An error raised saying <i>'There is an entry for table "c", but it cannot be referenced from this part of the query.'</i><br>
 If we added <b>lateral</b> here:
-```
+```sql
 SELECT DISTINCT c."class", avgg.avg_grade FROM zzz_tmp.classes c, 
     LATERAL (
         SELECT avg(grade) AS avg_grade 
