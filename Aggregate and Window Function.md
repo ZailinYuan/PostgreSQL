@@ -102,7 +102,7 @@ Result:
 ```
 
 
-12. WITHIN GROUP
+### 12. WITHIN GROUP
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
 * Usually used with order by
 * https://www.postgresql.org/docs/current/functions-aggregate.html
