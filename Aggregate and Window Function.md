@@ -1,3 +1,15 @@
+# Aggregate (group) Function Tips
+1. Aggregate Function are not necessarily works with <b>GROUP BY</b> clause. It still works when no GRUOP BY and the whole table will be seen as a group.
+```sql
+  SELECT max(grade) AS avg_grade 
+  FROM zzz_tmp.classes c2 
+```
+<b>Having</b> function still works in this case:
+```sql
+  SELECT max(grade) AS avg_grade 
+  FROM zzz_tmp.classes c2 
+  HAVING max(grade) > 95
+```
 
 # Aggregate Function Advanced
 1. <b>Filter clause</b>
