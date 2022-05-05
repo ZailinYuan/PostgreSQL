@@ -127,6 +127,21 @@ Result
   FROM zzz_tmp.classes c 
   GROUP BY ROLLUP ("class", team)
 ```
+Result
+```
+|class       |team |max|min|avg  |
+|------------|-----|---|---|-----|
+|            |     |90 |74 |81.75|
+|Team_Builder|BA   |74 |74 |74.00|
+|Math        |DEV  |90 |81 |85.50|
+|Team_Builder|OTHER|89 |89 |89.00|
+|Math        |BA   |77 |77 |77.00|
+|Team_Builder|DEV  |86 |79 |82.50|
+|Inspect     |DEV  |78 |78 |78.00|
+|Inspect     |     |78 |78 |78.00|
+|Math        |     |90 |77 |82.66|
+|Team_Builder|     |89 |74 |82.00|
+```
 
 ### 12. WITHIN GROUP
 * The WITHIN GROUP clause is particularly useful when performing aggregations on ordered subsets of data.
