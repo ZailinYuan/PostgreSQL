@@ -96,7 +96,7 @@ It works! Subquery can refer 'c' of outer query.
 The first one has to return a value, at least a [NULL] returned had the result set is empty. The second returns a empty result set if not record meets. Thus, if you wanna get a [NULL] when nother there, use the first one, or when you need use functions like COALESCE or NULLIF, use the first one is a solution.
 
 # COALESCE
-```
+```sql
 select (coalesce(val1, val2, val3, null);
 ```
 Return val1, if val1 is null return val2, if val2 is null return val3, if val3 is null return null.
