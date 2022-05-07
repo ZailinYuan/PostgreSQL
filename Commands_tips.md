@@ -85,7 +85,15 @@ It works! Subquery can refer 'c' of outer query.
 
 # Limit Offset
 * What if limit or offset is out of boundary?
+    Return empty result set.
 
+# SELECT empty table
+* What's the difference?
+```sql
+ SELECT value;
+ SELECT * FROM table;
+```
+The first one has to return a value, at least a [NULL] returned had the result set is empty. The second returns a empty result set if not record meets. Thus, if you wanna get a [NULL] when nother there, use the first one, or when you need use functions like COALESCE or NULLIF, use the first one is a solution.
 
 # Window function
 window functions returns result within group partitioned by PARTITION clause. 
