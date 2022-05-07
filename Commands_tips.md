@@ -83,6 +83,10 @@ SELECT DISTINCT c."class", avgg.avg_grade FROM zzz_tmp.classes c,
 ```
 It works! Subquery can refer 'c' of outer query.
 
+# Limit Offset
+* What if limit or offset is out of boundary?
+
+
 # Window function
 window functions returns result within group partitioned by PARTITION clause. 
 
