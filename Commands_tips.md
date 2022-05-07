@@ -24,10 +24,10 @@
 ```sql
     SELECT DISTINCT ON (name) name, age FROM ui.prisoners ORDER BY name, age  
 ```
-* To distinct tuples, the following two is the same.
+* To distinct tuples, the following two are the same.
 ```sql
-    SELECT "class", "name" FROM zzz_tmp.classes c2 GROUP BY "class", "name" 
-    SELECT DISTINCT "class", "name" FROM zzz_tmp.classes c3 
+    SELECT "class", "name" FROM zzz_tmp.classes c2 GROUP BY "class", "name"; 
+    SELECT DISTINCT "class", "name" FROM zzz_tmp.classes c3; 
 ```
 Constant columns in SELECT list refering are not constraint by GROUP BY list
 ```sql
