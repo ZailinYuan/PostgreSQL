@@ -33,6 +33,8 @@
 ```sql
     SELECT "class", "name", 'Bill' AS ceo FROM zzz_tmp.classes c2 GROUP BY "class", "name"
 ```
+* The SELECT list of DISTINCT ON clause is also constraint by GROUP BY lists.
+
 
 # CROSS JOIN 
 * If a table A has 8 rows, then A cross join A will leads to 64 rows.
