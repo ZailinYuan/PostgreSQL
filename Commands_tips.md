@@ -29,7 +29,8 @@
     SELECT "class", "name" FROM zzz_tmp.classes c2 GROUP BY "class", "name"; 
     SELECT DISTINCT "class", "name" FROM zzz_tmp.classes c3; 
 ```
->> Constant columns in SELECT list refering are not constraint by GROUP BY list
+>>The performance is the same illustated by EXPLAIN.
+>>Constant columns in SELECT list refering are not constraint by GROUP BY list
 ```sql
     SELECT "class", "name", 'Bill' AS ceo FROM zzz_tmp.classes c2 GROUP BY "class", "name"
 ```
