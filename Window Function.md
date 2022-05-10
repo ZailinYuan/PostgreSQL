@@ -39,3 +39,4 @@ Result:
 |8  |Rick |Team_Builder|89   |OTHER|90  |81   |
 |3  |Toma |Team_Builder|86   |DEV  |89  |90   |
 ```
+!!! lag offset number can be negative.
