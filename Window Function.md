@@ -15,7 +15,27 @@
 ```
 Source table:
 ```
+|id |name  |class       |grade|team |
+|---|------|------------|-----|-----|
+|1  |AJ    |Team_Builder|74   |BA   |
+|2  |Bill  |Team_Builder|79   |DEV  |
+|6  |Bob   |Inspect     |78   |DEV  |
+|7  |Eva   |Math        |77   |BA   |
+|4  |Frank |Math        |81   |DEV  |
+|5  |Lily  |Math        |90   |DEV  |
+|8  |Rick  |Team_Builder|89   |OTHER|
+|3  |Toma  |Team_Builder|86   |DEV  |
 ```
 Result:
 ```
+|id |name |class       |grade|team |prev|prev2|
+|---|-----|------------|-----|-----|----|-----|
+|1  |AJ   |Team_Builder|74   |BA   |    |     |
+|2  |Bill |Team_Builder|79   |DEV  |74  |     |
+|6  |Bob  |Inspect     |78   |DEV  |79  |74   |
+|7  |Eva  |Math        |77   |BA   |78  |79   |
+|4  |Frank|Math        |81   |DEV  |77  |78   |
+|5  |Lily |Math        |90   |DEV  |81  |77   |
+|8  |Rick |Team_Builder|89   |OTHER|90  |81   |
+|3  |Toma |Team_Builder|86   |DEV  |89  |90   |
 ```
