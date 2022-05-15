@@ -89,6 +89,7 @@ HAVING avg(grade) < all(
 ```
 
 ### WHERE/HAVNING + 行子查询
+以下 SQL
 ```sql
 SELECT * FROM zzz_tmp.classes c WHERE grade = (
 	SELECT max(grade) FROM zzz_tmp.classes c2 
@@ -99,3 +100,4 @@ SELECT * FROM zzz_tmp.classes c WHERE grade = (
 	LIMIT 1
 ) 
 ```
+可改写为：
