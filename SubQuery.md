@@ -51,7 +51,7 @@
 ERROR: more than one row returned by a subquery used as an expression
 ```
 HAVING with subquery:
-```
+```sql
 SELECT team, avg(grade) AS team_grade 
 FROM zzz_tmp.classes c 
 GROUP BY team 
