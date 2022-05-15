@@ -101,3 +101,16 @@ SELECT * FROM zzz_tmp.classes c WHERE grade = (
 ) 
 ```
 可改写为：
+```sql
+SELECT * FROM zzz_tmp.classes c WHERE (grade, team) = (
+	SELECT 
+		max(grade),
+		(
+			SELECT team FROM zzz_tmp.classes c3 
+			GROUP BY team 
+			ORDER BY count(*) desc
+			LIMIT 1
+		) 
+	FROM zzz_tmp.classes c2 
+)
+```
