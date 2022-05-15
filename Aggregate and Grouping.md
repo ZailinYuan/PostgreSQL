@@ -20,6 +20,12 @@ Aggregate Function are <b>NOT</b> necessarily works with <b>GROUP BY</b> clause.
   SELECT max(grade) AS avg_grade 
   FROM zzz_tmp.classes c2 
 ```
+And so does HAVING:
+```sql
+  SELECT max(grade) AS avg_grade 
+  FROM zzz_tmp.classes c2 
+  HAVING max(grade) > 95
+```
 
 ### Tip 2
 Aggregate Functions can be used in other than SELECT clause. For example, in ORDER BY clause.
