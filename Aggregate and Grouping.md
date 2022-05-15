@@ -1,4 +1,7 @@
 # Aggregate (group) Function Tips
+### Tip 0
+Aggregate Function are NOT ALLOWED in WHERE clause! This is said by compiler at least for PostgreSQL.
+
 ### Tip 1
 Aggregate Function are <b>NOT</b> necessarily works with <b>GROUP BY</b> clause. It still works when no GRUOP BY and the whole table will be seen as a group. A well-known example is COUNT().
 ```sql
