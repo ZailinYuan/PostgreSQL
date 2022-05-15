@@ -79,3 +79,11 @@ WHERE grade > any(
 ```
 ERROR: subquery has too many columns
 ```
+HAVING with subquery of one column
+```sql
+SELECT team, avg(grade) FROM zzz_tmp.classes c 
+GROUP BY team
+HAVING avg(grade) < all(
+	SELECT grade FROM zzz_tmp.classes c2 WHERE team = 'DEV'
+)
+```
