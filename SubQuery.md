@@ -16,3 +16,13 @@
 >> 3. 列子查询
 4. EXIST 后面：
 >> 表子查询
+
+# 查询案例
+1. WHERE + 标量子查询
+```
+  SELECT * FROM zzz_tmp.classes c 
+  WHERE grade > (
+    SELECT grade FROM zzz_tmp.classes c2 WHERE name = 'Bill'
+  )
+```
+4. 
