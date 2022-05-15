@@ -1,6 +1,6 @@
 # Aggregate (group) Function Tips
 ### Tip 0
-Aggregate Function are NOT ALLOWED in WHERE clause! This is said by compiler at least for PostgreSQL. However, it can be used not only in SELECT clause.
+Aggregate Function are NOT ALLOWED in WHERE clause! This is error raised by SQL compiler at least for PostgreSQL. However, it can be used not only in SELECT clause.
 ```sql
 	SELECT team FROM zzz_tmp.classes c3 
 	GROUP BY team 
