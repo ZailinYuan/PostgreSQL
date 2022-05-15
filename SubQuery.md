@@ -114,3 +114,4 @@ SELECT * FROM zzz_tmp.classes c WHERE (grade, team) = (
 	FROM zzz_tmp.classes c2 
 )
 ```
+这里子查询返回一行两列，where 里面必须与子查询列一一对应，这种很少用到。
