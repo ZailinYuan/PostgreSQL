@@ -50,29 +50,29 @@ ERROR: more than one row returned by a subquery used as an expression
 ```
 HAVING with subquery:
 ```sql
-	SELECT team, avg(grade) AS team_grade 
-	FROM zzz_tmp.classes c 
-	GROUP BY team 
-	HAVING avg(grade) > (
-		SELECT avg(grade) FROM zzz_tmp.classes c2 
-		WHERE team = 'BA'
-	)
+SELECT team, avg(grade) AS team_grade 
+FROM zzz_tmp.classes c 
+GROUP BY team 
+HAVING avg(grade) > (
+	SELECT avg(grade) FROM zzz_tmp.classes c2 
+	WHERE team = 'BA'
+)
 ```
 ### WHERE/HAVING + 列子查询
 ```sql
-	SELECT * FROM zzz_tmp.classes c 
-	WHERE grade > any(
-		SELECT grade FROM zzz_tmp.classes c2 
-		WHERE team = 'DEV'
-	)
+SELECT * FROM zzz_tmp.classes c 
+WHERE grade > any(
+	SELECT grade FROM zzz_tmp.classes c2 
+	WHERE team = 'DEV'
+)
 ```
 以下报错，因为不止一列
 ```sql
-	SELECT * FROM zzz_tmp.classes c 
-	WHERE grade > any(
-		SELECT name, grade FROM zzz_tmp.classes c2 
-		WHERE team = 'DEV'
-	)
+SELECT * FROM zzz_tmp.classes c 
+WHERE grade > any(
+	SELECT name, grade FROM zzz_tmp.classes c2 
+	WHERE team = 'DEV'
+)
 ```
 ```
 ERROR: subquery has too many columns
