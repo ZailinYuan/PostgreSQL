@@ -12,6 +12,9 @@ Aggregate Function are <b>NOT</b> necessarily works with <b>GROUP BY</b> clause.
   HAVING max(grade) > 95
 ```
 
+### Tip 2
+Aggregate Functions can be used in other than SELECT clause. 
+
 # Aggregate Function Advanced
 ### 1. <b>Filter clause</b>
 * See example here. It filters undesired value in each group before calculate aggregate function on that group.
