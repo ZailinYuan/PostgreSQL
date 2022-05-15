@@ -31,7 +31,7 @@
 |8  |Rick |Team_Builder|89   |
 
 ```
-### WHERE/HAVING + 标量子查询
+### 1. WHERE/HAVING + 标量子查询
 ```sql
   SELECT * FROM zzz_tmp.classes c 
   WHERE grade > (
@@ -60,7 +60,7 @@ HAVING avg(grade) > (
 	WHERE team = 'BA'
 )
 ```
-### WHERE/HAVING + 列子查询
+### 2. WHERE/HAVING + 列子查询
 ```sql
 SELECT * FROM zzz_tmp.classes c 
 WHERE grade > any(
@@ -88,7 +88,7 @@ HAVING avg(grade) < all(
 )
 ```
 
-### WHERE/HAVNING + 行子查询
+### 3. WHERE/HAVNING + 行子查询
 以下 SQL
 ```sql
 SELECT * FROM zzz_tmp.classes c WHERE grade = (
@@ -115,3 +115,16 @@ SELECT * FROM zzz_tmp.classes c WHERE (grade, team) = (
 )
 ```
 这里子查询返回一行两列，where 里面必须与子查询列一一对应，这种很少用到。
+### SELECT + 标量子查询
+上面就是现成例子
+```sql
+	SELECT 
+		max(grade),
+		(
+			SELECT team FROM zzz_tmp.classes c3 
+			GROUP BY team 
+			ORDER BY count(*) desc
+			LIMIT 1
+		) 
+	FROM zzz_tmp.classes c2 
+```
