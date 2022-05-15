@@ -31,7 +31,7 @@
 |8  |Rick |Team_Builder|89   |
 
 ```
-1. WHERE + 标量子查询
+### WHERE + 标量子查询
 ```sql
   SELECT * FROM zzz_tmp.classes c 
   WHERE grade > (
@@ -48,4 +48,4 @@
 ```
 ERROR: more than one row returned by a subquery used as an expression
 ```
-4. 
+###
