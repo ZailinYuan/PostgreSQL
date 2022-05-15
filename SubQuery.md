@@ -31,7 +31,7 @@
 |8  |Rick |Team_Builder|89   |
 
 ```
-### WHERE + 标量子查询
+### WHERE/HAVING + 标量子查询
 ```sql
   SELECT * FROM zzz_tmp.classes c 
   WHERE grade > (
