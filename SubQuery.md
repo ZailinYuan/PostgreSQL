@@ -87,3 +87,15 @@ HAVING avg(grade) < all(
 	SELECT grade FROM zzz_tmp.classes c2 WHERE team = 'DEV'
 )
 ```
+
+### WHERE/HAVNING + 行子查询
+```sql
+SELECT * FROM zzz_tmp.classes c WHERE grade = (
+	SELECT max(grade) FROM zzz_tmp.classes c2 
+) AND team = (
+	SELECT team FROM zzz_tmp.classes c3 
+	GROUP BY team 
+	ORDER BY count(*) desc
+	LIMIT 1
+) 
+```
