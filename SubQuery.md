@@ -19,10 +19,18 @@
 
 # 查询案例
 1. WHERE + 标量子查询
-```
+```sql
   SELECT * FROM zzz_tmp.classes c 
   WHERE grade > (
     SELECT grade FROM zzz_tmp.classes c2 WHERE name = 'Bill'
   )
 ```
+如果返回多行，报错：
+```sql
+  SELECT * FROM zzz_tmp.classes c 
+  WHERE grade > (
+    SELECT grade FROM zzz_tmp.classes c2 WHERE "class" = 'Math'
+  )
+```
+ERROR: more than one row returned by a subquery used as an expression
 4. 
