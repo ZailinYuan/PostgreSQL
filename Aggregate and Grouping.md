@@ -13,7 +13,14 @@ Aggregate Function are <b>NOT</b> necessarily works with <b>GROUP BY</b> clause.
 ```
 
 ### Tip 2
-Aggregate Functions can be used in other than SELECT clause. 
+Aggregate Functions can be used in other than SELECT clause. For example, in ORDER BY clause.
+```sql
+  SELECT customer_number 
+  FROM Orders 
+  GROUP BY customer_number 
+  ORDER BY count(order_number) DESC 
+  LMIT 1
+```
 
 # Aggregate Function Advanced
 ### 1. <b>Filter clause</b>
