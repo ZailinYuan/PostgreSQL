@@ -45,5 +45,7 @@
     SELECT grade FROM zzz_tmp.classes c2 WHERE "class" = 'Math'
   )
 ```
+```
 ERROR: more than one row returned by a subquery used as an expression
+```
 4. 
