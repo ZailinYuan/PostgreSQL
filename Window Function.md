@@ -54,6 +54,12 @@ Result:
 ```
 # first_value()
 Attach first_value of the group to each row.
+```sql
+SELECT 
+	*, 
+	first_value(grade) over(PARTITION BY team ORDER BY grade desc) AS grade 
+FROM zzz_tmp."classes"
+```
 ```
 |id |name |class       |grade|team |grade|
 |---|-----|------------|-----|-----|-----|
