@@ -53,7 +53,7 @@ Result:
 |3  |Toma |Team_Builder|86   |DEV  |    |
 ```
 # first_value(), last_value(), nth_value()
-Attach first_value of the group to each row.
+<b>first_value</b> attaches first_value of the group to each row.
 ```sql
 SELECT 
 	*, 
@@ -71,6 +71,14 @@ FROM zzz_tmp."classes"
 |2  |Bill |Team_Builder|79   |DEV  |90   |
 |6  |Bob  |Inspect     |78   |DEV  |90   |
 |8  |Rick |Team_Builder|89   |OTHER|89   |
+```
+<b>nth_value</b>:
+```sql
+SELECT *, 
+	nth_value(grade, 2) over(PARTITION BY team ORDER BY grade desc) AS grade_rank_in_team 
+FROM zzz_tmp.classes c 
+```
+```
 ```
 
 # rank() and dense_rank()
