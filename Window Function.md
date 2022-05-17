@@ -39,4 +39,16 @@ Result:
 |8  |Rick |Team_Builder|89   |OTHER|90  |81   |
 |3  |Toma |Team_Builder|86   |DEV  |89  |90   |
 ```
-!!! lag offset number can be negative.
+!!! lag offset number can be negative. See below:
+```
+|id |name |class       |grade|team |prev|
+|---|-----|------------|-----|-----|----|
+|1  |AJ   |Team_Builder|74   |BA   |78  |
+|2  |Bill |Team_Builder|79   |DEV  |77  |
+|6  |Bob  |Inspect     |78   |DEV  |81  |
+|7  |Eva  |Math        |77   |BA   |90  |
+|4  |Frank|Math        |81   |DEV  |89  |
+|5  |Lily |Math        |90   |DEV  |86  |
+|8  |Rick |Team_Builder|89   |OTHER|    |
+|3  |Toma |Team_Builder|86   |DEV  |    |
+```
