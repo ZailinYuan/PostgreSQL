@@ -89,7 +89,7 @@ FROM zzz_tmp.classes c
 |2  |Bill |Team_Builder|79   |DEV  |4                 |
 |6  |Bob  |Inspect     |78   |DEV  |5                 |
 ```
-<b>dense_rank</b> is same as rank except it will leave no gap, ranks are continious
+<b>dense_rank</b> is same as rank except it will leave no gap, ranks are continuous
 ```sql
 SELECT *, 
 	dense_rank() over(PARTITION BY team ORDER BY grade desc) AS grade_rank_in_team 
