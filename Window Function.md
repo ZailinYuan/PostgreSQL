@@ -41,6 +41,13 @@ Result:
 ```
 <b>!!! lag offset number can be negative</b>. See below:
 ```
+  SELECT * FROM (
+    SELECT *, 
+      lag(grade, -2) over(ORDER BY "name") AS prev
+    FROM zzz_tmp.classes c
+  ) AS tmp
+```
+```
 |id |name |class       |grade|team |prev|
 |---|-----|------------|-----|-----|----|
 |1  |AJ   |Team_Builder|74   |BA   |78  |
