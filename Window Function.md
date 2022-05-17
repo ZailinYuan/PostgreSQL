@@ -52,7 +52,7 @@ Result:
 |8  |Rick |Team_Builder|89   |OTHER|    |
 |3  |Toma |Team_Builder|86   |DEV  |    |
 ```
-# first_value()
+# first_value(), last_value(), nth_value()
 Attach first_value of the group to each row.
 ```sql
 SELECT 
@@ -73,7 +73,7 @@ FROM zzz_tmp."classes"
 |8  |Rick |Team_Builder|89   |OTHER|89   |
 ```
 
-# rank() && dense_rank()
+# rank() and dense_rank()
 <b>rank</b> duplicate values in partition are ranked same, due to which gaps generates.
 ```sql
 SELECT *, 
