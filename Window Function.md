@@ -79,6 +79,16 @@ SELECT *,
 FROM zzz_tmp.classes c 
 ```
 ```
+|id |name |class       |grade|team |second_highest_grade|
+|---|-----|------------|-----|-----|--------------------|
+|7  |Eva  |Math        |77   |BA   |                    |
+|1  |AJ   |Team_Builder|74   |BA   |74                  |
+|5  |Lily |Math        |90   |DEV  |                    |
+|3  |Toma |Team_Builder|86   |DEV  |86                  |
+|4  |Frank|Math        |81   |DEV  |86                  |
+|2  |Bill |Team_Builder|79   |DEV  |86                  |
+|6  |Bob  |Inspect     |78   |DEV  |86                  |
+|8  |Rick |Team_Builder|89   |OTHER|                    |
 ```
 
 # rank() and dense_rank()
