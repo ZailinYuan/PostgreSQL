@@ -2,7 +2,7 @@
 * If the query contains any window functions, these functions are evaluated after any grouping, aggregation, and HAVING filtering is performed. That is, if the query uses any aggregates, GROUP BY, or HAVING, then the rows seen by the window functions are the group rows instead of the original table rows from FROM/WHERE.
 * When multiple window functions are used, all the window functions having syntactically equivalent PARTITION BY and ORDER BY clauses in their window definitions are guaranteed to be evaluated in a single pass over the data. Therefore they will see the same sort ordering, even if the ORDER BY does not uniquely determine an ordering.
 
-# LAG
+# lag()
 * LAG function is used to get previous row value.
 ```sql
   SELECT * FROM (
@@ -52,7 +52,7 @@ Result:
 |8  |Rick |Team_Builder|89   |OTHER|    |
 |3  |Toma |Team_Builder|86   |DEV  |    |
 ```
-# first_value
+# first_value()
 Attach first_value of the group to each row.
 ```
 |id |name |class       |grade|team |grade|
@@ -67,4 +67,4 @@ Attach first_value of the group to each row.
 |8  |Rick |Team_Builder|89   |OTHER|89   |
 ```
 
-# rank && dense_rank
+# rank() && dense_rank()
