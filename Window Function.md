@@ -40,7 +40,7 @@ Result:
 |3  |Toma |Team_Builder|86   |DEV  |89  |90   |
 ```
 <b>!!! lag offset number can be negative</b>. See below:
-```
+```sql
   SELECT * FROM (
     SELECT *, 
       lag(grade, -2) over(ORDER BY "name") AS prev
