@@ -74,6 +74,7 @@ FROM zzz_tmp."classes"
 ```
 
 # rank() && dense_rank()
+<b>rank</b> duplicate values in partition are ranked same, due to which gaps generates.
 ```sql
 SELECT *, 
 	rank() over(PARTITION BY team ORDER BY grade desc) AS grade_rank_in_team 
@@ -87,4 +88,19 @@ FROM zzz_tmp.classes c
 |3  |Toma |Team_Builder|86   |DEV  |2                 |
 |2  |Bill |Team_Builder|79   |DEV  |4                 |
 |6  |Bob  |Inspect     |78   |DEV  |5                 |
+```
+<b>dense_rank</b> is same as rank except it will leave no gap, ranks are continious
+```sql
+SELECT *, 
+	dense_rank() over(PARTITION BY team ORDER BY grade desc) AS grade_rank_in_team 
+FROM zzz_tmp.classes c 
+```
+```
+|id |name |class       |grade|team |grade_rank_in_team|
+|---|-----|------------|-----|-----|------------------|
+|5  |Lily |Math        |90   |DEV  |1                 |
+|4  |Frank|Math        |86   |DEV  |2                 |
+|3  |Toma |Team_Builder|86   |DEV  |2                 |
+|2  |Bill |Team_Builder|79   |DEV  |3                 |
+|6  |Bob  |Inspect     |78   |DEV  |4                 |
 ```
