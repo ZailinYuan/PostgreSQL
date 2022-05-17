@@ -52,3 +52,7 @@ Result:
 |8  |Rick |Team_Builder|89   |OTHER|    |
 |3  |Toma |Team_Builder|86   |DEV  |    |
 ```
+# first_value
+
+
+# rank && dense_rank
