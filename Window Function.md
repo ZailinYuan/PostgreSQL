@@ -53,6 +53,18 @@ Result:
 |3  |Toma |Team_Builder|86   |DEV  |    |
 ```
 # first_value
-
+Attach first_value of the group to each row.
+```
+|id |name |class       |grade|team |grade|
+|---|-----|------------|-----|-----|-----|
+|7  |Eva  |Math        |77   |BA   |77   |
+|1  |AJ   |Team_Builder|74   |BA   |77   |
+|5  |Lily |Math        |90   |DEV  |90   |
+|3  |Toma |Team_Builder|86   |DEV  |90   |
+|4  |Frank|Math        |81   |DEV  |90   |
+|2  |Bill |Team_Builder|79   |DEV  |90   |
+|6  |Bob  |Inspect     |78   |DEV  |90   |
+|8  |Rick |Team_Builder|89   |OTHER|89   |
+```
 
 # rank && dense_rank
