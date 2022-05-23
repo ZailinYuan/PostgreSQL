@@ -112,3 +112,9 @@ window functions returns result within group partitioned by PARTITION clause.
                      ORDER BY grade DESC) AS ranking
     FROM classes
 ```
+
+# Copy/backup table to another schema
+The following SQL copy a table into a new table in another schema and create new table if needed.
+```sql
+SELECT * INTO backup.clients FROM products.clients
+```
