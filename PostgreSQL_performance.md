@@ -70,5 +70,11 @@ GROUP BY person1, person2
 ```
 Result:
 ```
-
+HashAggregate  (cost=98.20..100.20 rows=200 width=24)
+  Group Key: calls.from_id, calls.to_id
+  ->  Append  (cost=0.00..84.60 rows=1360 width=12)
+        ->  Seq Scan on calls  (cost=0.00..35.50 rows=680 width=12)
+              Filter: (from_id < to_id)
+        ->  Seq Scan on calls calls_1  (cost=0.00..35.50 rows=680 width=12)
+              Filter: (to_id < from_id)
 ```
