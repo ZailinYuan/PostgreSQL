@@ -85,7 +85,7 @@ EXPLAIN SELECT * FROM zzz_tmp.classes c WHERE grade < 85 AND grade > 80
 
 EXPLAIN SELECT * FROM zzz_tmp.classes c WHERE grade BETWEEN 80 AND 85
 ```
-results are the same:
+Results are the same:
 ```
 Seq Scan on classes c  (cost=0.00..17.65 rows=3 width=132)
   Filter: ((grade >= '80'::numeric) AND (grade <= '85'::numeric))
