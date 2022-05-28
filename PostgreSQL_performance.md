@@ -1,5 +1,5 @@
 # Case when then 用于 group by
-Calls table:
+Calls table (leetcode) 1699:
 ```
 +---------+-------+----------+
 | from_id | to_id | duration |
