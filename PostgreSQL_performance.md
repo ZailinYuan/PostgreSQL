@@ -44,3 +44,31 @@ Result:
 
 #
 PostgreSQL has two aggregate algorithms: HashAggregate and GroupAggregate. Hash using has table while group using sort.
+
+# UNION
+```
++---------+-------+----------+
+| from_id | to_id | duration |
++---------+-------+----------+
+| 1       | 2     | 59       |
+| 2       | 1     | 11       |
+| 1       | 3     | 20       |
+| 3       | 4     | 100      |
+| 3       | 4     | 200      |
+| 3       | 4     | 200      |
+| 4       | 3     | 499      |
++---------+-------+----------+
+```
+```sql
+EXPLAIN SELECT person1, person2, count(*) as call_count, sum(duration) AS total_duration 
+  FROM (
+    SELECT from_id AS person1, to_id AS person2, duration FROM zzz_tmp.Calls WHERE from_id < to_id
+    UNION ALL
+    SELECT to_id AS person1, from_id AS person2, duration FROM zzz_tmp.Calls WHERE to_id < from_id
+) AS tmp 
+GROUP BY person1, person2
+```
+Result:
+```
+
+```
