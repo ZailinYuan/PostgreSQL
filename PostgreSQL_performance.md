@@ -1,4 +1,4 @@
-# 
+# Case when then 用于 group by
 ```sql
   EXPLAIN SELECT 
     person1, 
