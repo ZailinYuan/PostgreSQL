@@ -21,3 +21,9 @@
     FROM zzz_tmp.Calls
 ) AS tmp GROUP BY person1, person2
 ```
+Result:
+```
+  HashAggregate  (cost=61.00..64.06 rows=204 width=24)
+    Group Key: CASE WHEN (calls.from_id > calls.to_id) THEN calls.to_id ELSE calls.from_id END, CASE WHEN (calls.from_id > calls.to_id) THEN calls.from_id ELSE calls.to_id END
+  ->  Seq Scan on calls  (cost=0.00..40.60 rows=2040 width=12)
+```
