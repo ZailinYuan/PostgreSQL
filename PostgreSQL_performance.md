@@ -105,9 +105,12 @@ Seq Scan on classes c  (cost=0.00..17.65 rows=3 width=132)
 | 2020-05-04 | oranges    | 16          |
 +------------+------------+-------------+
 ```
-```
+```sql
 EXPLAIN select sale_date, sold_num - (
-    select sold_num from zzz.Sales where sale_date = s2.sale_date and fruit = 'oranges'
-) as diff from zzz.sales s2 where fruit = 'apples'
-order by sale_date
+    SELECT sold_num 
+    FROM zzz.Sales 
+    WHERE sale_date = s2.sale_date AND fruit = 'oranges'
+) AS diff 
+FROM zzz.sales s2 WHERE fruit = 'apples'
+ORDER BY sale_date
 ```
