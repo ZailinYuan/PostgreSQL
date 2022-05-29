@@ -105,7 +105,7 @@ Seq Scan on classes c  (cost=0.00..17.65 rows=3 width=132)
 | 2020-05-04 | oranges    | 16          |
 +------------+------------+-------------+
 ```
-```postgresql
+```sql
 EXPLAIN select sale_date, sold_num - (
     SELECT sold_num 
     FROM zzz.Sales 
