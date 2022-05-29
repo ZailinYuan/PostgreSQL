@@ -132,5 +132,7 @@ SELECT * FROM zzz_tmp.classes c WHERE (grade, team) = (
 ### FROM + 表子查询
 用得太多无需赘述
 
+### 子查询可以调用外部查询变量
+The subquery can refer to variables from the surrounding query, which will act as constants during any one evaluation of the subquery.
 ### EXISTS + 表子查询
 EXISTS 只关心后面的子查询是否有数据，有则返回 TRUE 否则 FALSE，多用作 WHERE 条件。
