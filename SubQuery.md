@@ -128,6 +128,7 @@ SELECT * FROM zzz_tmp.classes c WHERE (grade, team) = (
 		) 
 	FROM zzz_tmp.classes c2 
 ```
+若子查询返回多行多列则报错。
 ### FROM + 表子查询
 用得太多无需赘述
 
