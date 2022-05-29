@@ -114,3 +114,13 @@ EXPLAIN select sale_date, sold_num - (
 FROM zzz.sales s2 WHERE fruit = 'apples'
 ORDER BY sale_date
 ```
+Result: 
+```
+Sort  (cost=111.68..111.69 rows=4 width=36)
+  Sort Key: s2.sale_date
+  ->  Seq Scan on sales s2  (cost=0.00..111.64 rows=4 width=36)
+        Filter: (fruit = 'apples'::text)
+        SubPlan 1
+          ->  Seq Scan on sales  (cost=0.00..22.75 rows=1 width=4)
+                Filter: ((sale_date = s2.sale_date) AND (fruit = 'oranges'::text))
+```
