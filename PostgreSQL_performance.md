@@ -90,3 +90,24 @@ Results are the same:
 Seq Scan on classes c  (cost=0.00..17.65 rows=3 width=132)
   Filter: ((grade >= '80'::numeric) AND (grade <= '85'::numeric))
 ```
+# Subquery in select
+```
++------------+------------+-------------+
+| sale_date  | fruit      | sold_num    |
++------------+------------+-------------+
+| 2020-05-01 | apples     | 10          |
+| 2020-05-01 | oranges    | 8           |
+| 2020-05-02 | apples     | 15          |
+| 2020-05-02 | oranges    | 15          |
+| 2020-05-03 | apples     | 20          |
+| 2020-05-03 | oranges    | 0           |
+| 2020-05-04 | apples     | 15          |
+| 2020-05-04 | oranges    | 16          |
++------------+------------+-------------+
+```
+```
+EXPLAIN select sale_date, sold_num - (
+    select sold_num from zzz.Sales where sale_date = s2.sale_date and fruit = 'oranges'
+) as diff from zzz.sales s2 where fruit = 'apples'
+order by sale_date
+```
