@@ -124,3 +124,21 @@ Sort  (cost=111.68..111.69 rows=4 width=36)
           ->  Seq Scan on sales  (cost=0.00..22.75 rows=1 width=4)
                 Filter: ((sale_date = s2.sale_date) AND (fruit = 'oranges'::text))
 ```
+
+# Where In
+```sql
+EXPLAIN SELECT "name" FROM zzz.classes c 
+WHERE team NOT IN (
+  SELECT team 
+  FROM zzz.classes c2 
+  WHERE grade < 80
+)
+```
+Result:
+```
+Seq Scan on classes c  (cost=16.80..33.17 rows=255 width=32)
+  Filter: (NOT (hashed SubPlan 1))
+  SubPlan 1
+    ->  Seq Scan on classes c2  (cost=0.00..16.38 rows=170 width=32)
+          Filter: (grade < '80'::numeric)
+```
