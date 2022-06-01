@@ -131,8 +131,22 @@ FROM zzz_tmp.classes c
 ```
 
 # row_number()
+Number each rows in each partition.
 ```sql
 SELECT "name", team, row_number() over(PARTITION BY team ORDER BY "name") FROM zzz.classes c 
+```
+Result:
+```
+|name|team |row_number|
+|----|-----|----------|
+|AJ  |BA   |1         |
+|Eva |BA   |2         |
+|Bill|DEV  |1         |
+|Bob |DEV  |2         |
+|Frank|DEV |3         |
+|Lily|DEV  |4         |
+|Toma|DEV  |5         |
+|Rick|OTHER|1         |
 ```
 
 # 聚合函数做窗口函数
