@@ -130,5 +130,10 @@ FROM zzz_tmp.classes c
 |6  |Bob  |Inspect     |78   |DEV  |4                 |
 ```
 
+# row_number()
+```sql
+SELECT "name", team, row_number() over(PARTITION BY team ORDER BY "name") FROM zzz.classes c 
+```
+
 # 聚合函数做窗口函数
 聚合函数也可做窗口函数，但是函数参数不能为空，并且结果为逐行统计。
