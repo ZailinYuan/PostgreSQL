@@ -142,4 +142,4 @@ Seq Scan on classes c  (cost=16.80..33.17 rows=255 width=32)
     ->  Seq Scan on classes c2  (cost=0.00..16.38 rows=170 width=32)
           Filter: (grade < '80'::numeric)
 ```
-<b>We can see that the 'IN' values are hased as filter for table scan.</b>
+<b>We can see that the 'IN' values are hashed as filter for table scan.</b>
