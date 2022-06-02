@@ -1,4 +1,7 @@
-# 
+# 显示所有进程
+```sql
+SHOW processlist
+```
 
 # Common bugs
 ### source database "DB_TEMPLATE" is being accessed by other users
