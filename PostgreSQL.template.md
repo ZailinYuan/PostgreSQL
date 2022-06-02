@@ -9,3 +9,4 @@ FROM pg_stat_activity
 WHERE pg_stat_activity.datname = 'DMH_IM_DEV' -- change this to your DB
   AND pid <> pg_backend_pid();
 ```
+pg_stat_activity is the table with all active processes of a DB
