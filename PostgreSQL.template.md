@@ -2,6 +2,10 @@
 ```sql
 SHOW processlist
 ```
+# 查找所有 DB
+```sql
+SELECT datname FROM pg_database;
+```
 
 # Common bugs
 ### source database "DB_TEMPLATE" is being accessed by other users
