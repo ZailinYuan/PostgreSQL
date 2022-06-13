@@ -17,3 +17,10 @@ WHERE pg_stat_activity.datname = 'DMH_IM_DEV' -- change this to your DB
   AND pid <> pg_backend_pid();
 ```
 pg_stat_activity is the table with all active processes of a DB
+
+# 用户权限
+查看用户所有权限
+```sql
+information_schema.role_table_grants
+select * from information_schema.table_privileges where grantee='cc';
+```
