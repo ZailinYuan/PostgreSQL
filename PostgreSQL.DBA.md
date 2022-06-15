@@ -24,3 +24,7 @@ pg_stat_activity is the table with all active processes of a DB
 information_schema.role_table_grants
 select * from information_schema.table_privileges where grantee='cc';
 ```
+# 查看 log
+```sql
+SELECT  pg_current_logfile();
+```
